@@ -5,7 +5,7 @@ import org.jboss.da.listings.api.dao.BlackArtifactDAO;
 import org.jboss.da.listings.api.model.BlackArtifact;
 import org.jboss.da.listings.api.model.GA;
 
-import javax.ejb.Stateless;
+import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -17,7 +17,7 @@ import java.util.List;
  * @author Jozef Mrazek &lt;jmrazek@redhat.com&gt;
  * @author Honza Brázdil &lt;jbrazdil@redhat.com&gt;
  */
-@Stateless
+@ApplicationScoped
 public class BlackArtifactDAOImpl extends ArtifactDAOImpl<BlackArtifact> implements BlackArtifactDAO {
 
     public BlackArtifactDAOImpl() {

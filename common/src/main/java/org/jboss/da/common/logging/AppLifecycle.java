@@ -4,11 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.Startup;
-import javax.inject.Singleton;
+import javax.enterprise.context.ApplicationScoped;
+import io.quarkus.runtime.Startup
 
 @Startup
-@Singleton
+@ApplicationScoped
 @Slf4j
 public class AppLifecycle {
 
