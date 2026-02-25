@@ -5,9 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
-import io.quarkus.runtime.Startup
+//import io.quarkus.runtime.Startup;
 
-@Startup
+//@Startup
 @ApplicationScoped
 @Slf4j
 public class AppLifecycle {
