@@ -4,9 +4,9 @@ import org.jboss.da.common.CommunicationException;
 import org.jboss.da.communication.indy.model.VersionResponse;
 import org.jboss.da.communication.indy.model.npm.NpmMetadata;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
 
 import java.io.IOException;
 import java.io.InputStream;
