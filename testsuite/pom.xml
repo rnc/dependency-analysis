@@ -12,17 +12,17 @@
         <dependency>
             <groupId>org.jboss.da</groupId>
             <artifactId>communication</artifactId>
-            <type>ejb</type>
+<!--            <type>ejb</type>-->
         </dependency>
         <dependency>
             <groupId>org.jboss.da</groupId>
             <artifactId>source-code-manager</artifactId>
-            <type>ejb</type>
+<!--            <type>ejb</type>-->
         </dependency>
         <dependency>
             <groupId>org.jboss.da</groupId>
             <artifactId>reports-backend</artifactId>
-            <type>ejb</type>
+<!--            <type>ejb</type>-->
         </dependency>
         <dependency>
             <groupId>org.commonjava.atlas</groupId>
@@ -31,8 +31,8 @@
 
         <!-- Test dependencies -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-junit5</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -40,16 +40,16 @@
             <artifactId>resteasy-client</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-jaxrs</artifactId>
-            <scope>test</scope>
-        </dependency>
-         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.resteasy</groupId>-->
+<!--            <artifactId>resteasy-jaxrs</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+<!--         <dependency>-->
+<!--            <groupId>org.hibernate</groupId>-->
+<!--            <artifactId>hibernate-core</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.github.tomakehurst</groupId>
             <artifactId>wiremock-standalone</artifactId>
@@ -76,29 +76,29 @@
         </dependency>
 
         <!-- Arquilian dependencies -->
-        <dependency>
-            <groupId>org.jboss.arquillian.junit</groupId>
-            <artifactId>arquillian-junit-container</artifactId>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.arquillian.junit</groupId>-->
+<!--            <artifactId>arquillian-junit-container</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.jboss.arquillian.protocol</groupId>
-            <artifactId>arquillian-protocol-servlet</artifactId>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.arquillian.protocol</groupId>-->
+<!--            <artifactId>arquillian-protocol-servlet</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.jboss.shrinkwrap.resolver</groupId>
-            <artifactId>shrinkwrap-resolver-impl-maven-archive</artifactId>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.shrinkwrap.resolver</groupId>-->
+<!--            <artifactId>shrinkwrap-resolver-impl-maven-archive</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.wildfly.arquillian</groupId>
-            <artifactId>wildfly-arquillian-container-managed</artifactId>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.wildfly.arquillian</groupId>-->
+<!--            <artifactId>wildfly-arquillian-container-managed</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jackson2-provider</artifactId>
@@ -124,11 +124,11 @@
             <artifactId>jsonrpc2-base</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>io.undertow</groupId>
-            <artifactId>undertow-websockets-jsr</artifactId>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.undertow</groupId>-->
+<!--            <artifactId>undertow-websockets-jsr</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
     </dependencies>
 

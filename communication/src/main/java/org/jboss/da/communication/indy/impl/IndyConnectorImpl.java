@@ -15,8 +15,8 @@ import org.jboss.da.model.rest.GAV;
 import org.jboss.pnc.common.log.MDCUtils;
 import org.slf4j.Logger;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import javax.xml.bind.JAXBException;
 
 import java.io.FileNotFoundException;

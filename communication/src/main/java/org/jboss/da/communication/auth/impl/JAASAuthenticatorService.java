@@ -2,10 +2,10 @@ package org.jboss.da.communication.auth.impl;
 
 import org.jboss.da.communication.auth.AuthenticatorService;
 
-import javax.enterprise.context.RequestScoped;
-import javax.enterprise.inject.Alternative;
-import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.inject.Alternative;
+import jakarta.inject.Inject;
+import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.Optional;
 

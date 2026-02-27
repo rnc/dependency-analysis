@@ -5,8 +5,8 @@ import org.jboss.da.rest.websocket.Methods;
 import org.jboss.da.rest.websocket.WebsocketEndpointHandler;
 import org.slf4j.MDC;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;

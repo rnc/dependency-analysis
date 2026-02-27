@@ -7,7 +7,7 @@
     </parent>
     <artifactId>reports-model</artifactId>
     <name>reports-model</name>
-    <packaging>ejb</packaging>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>org.jboss.pnc</groupId>
@@ -54,8 +54,8 @@
 
         <!-- Test dependencies -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-junit5</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

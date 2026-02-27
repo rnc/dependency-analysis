@@ -7,23 +7,20 @@
     </parent>
     <artifactId>communication</artifactId>
     <name>communication</name>
-    <packaging>ejb</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>org.jboss.da</groupId>
             <artifactId>common</artifactId>
-            <type>ejb</type>
         </dependency>
         <dependency>
             <groupId>org.jboss.da</groupId>
             <artifactId>reports-model</artifactId>
-            <type>ejb</type>
         </dependency>
         <dependency>
             <groupId>org.jboss.da</groupId>
             <artifactId>source-code-manager</artifactId>
-            <type>ejb</type>
         </dependency>
 
         <dependency>
@@ -71,30 +68,23 @@
             <artifactId>jackson-databind</artifactId>
             <scope>provided</scope>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>jakarta.enterprise</groupId>-->
+<!--            <artifactId>jakarta.enterprise.cdi-api</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.spec.javax.servlet</groupId>-->
+<!--            <artifactId>jboss-servlet-api_4.0_spec</artifactId>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>jakarta.enterprise</groupId>
-            <artifactId>jakarta.enterprise.cdi-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.servlet</groupId>
-            <artifactId>jboss-servlet-api_4.0_spec</artifactId>
-            <scope>provided</scope>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-undertow</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-core</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.wildfly.security</groupId>
-            <artifactId>wildfly-elytron-http-oidc</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
         <dependency>
             <groupId>org.commonjava.maven.galley</groupId>
             <artifactId>galley-maven</artifactId>
@@ -125,8 +115,9 @@
 
         <!-- Test dependencies -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-junit5</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
@@ -142,9 +133,9 @@
             <artifactId>wiremock-standalone</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.xml.bind</groupId>
-            <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.spec.javax.xml.bind</groupId>-->
+<!--            <artifactId>jboss-jaxb-api_2.3_spec</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 </project>

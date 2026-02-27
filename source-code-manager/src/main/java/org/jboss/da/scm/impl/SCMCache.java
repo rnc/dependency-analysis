@@ -2,9 +2,9 @@ package org.jboss.da.scm.impl;
 
 import lombok.extern.slf4j.Slf4j;
 
-import javax.annotation.PreDestroy;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.annotation.PreDestroy;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;

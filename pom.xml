@@ -21,7 +21,7 @@
         <license>
             <name>Apache License, Version 2.0</name>
             <distribution>repo</distribution>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.html</url>
         </license>
     </licenses>
 
@@ -88,9 +88,9 @@
         <!-- Ideally this should be 1.21 this causes many problems with o11yphant metrics -->
         <!-- It was 0.13.4 -->
         <version.galley>1.3</version.galley>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <jboss.bom.version>7.4.3.GA</jboss.bom.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <quarkus.platform.version>3.21.4</quarkus.platform.version>
         <mvn-scm.version>1.11.2</mvn-scm.version>
         <corsUrlPattern>/*</corsUrlPattern>
 
@@ -107,39 +107,42 @@
                 <groupId>org.jboss.da</groupId>
                 <artifactId>common</artifactId>
                 <version>${project.version}</version>
-                <type>ejb</type>
             </dependency>
             <dependency>
                 <groupId>org.jboss.da</groupId>
                 <artifactId>source-code-manager</artifactId>
                 <version>${project.version}</version>
-                <type>ejb</type>
             </dependency>
             <dependency>
                 <groupId>org.jboss.da</groupId>
                 <artifactId>communication</artifactId>
                 <version>${project.version}</version>
-                <type>ejb</type>
             </dependency>
             <dependency>
                 <groupId>org.jboss.da</groupId>
                 <artifactId>reports-model</artifactId>
                 <version>${project.version}</version>
-                <type>ejb</type>
             </dependency>
             <dependency>
                 <groupId>org.jboss.da</groupId>
                 <artifactId>reports-backend</artifactId>
                 <version>${project.version}</version>
-                <type>ejb</type>
             </dependency>
             <dependency>
                 <groupId>org.jboss.da</groupId>
                 <artifactId>reports-rest</artifactId>
                 <version>${project.version}</version>
-                <type>war</type>
             </dependency>
             <!-- Project modules -->
+
+            <!-- Quarkus BOM -->
+            <dependency>
+                <groupId>io.quarkus.platform</groupId>
+                <artifactId>quarkus-bom</artifactId>
+                <version>${quarkus.platform.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
             <!-- PNC -->
             <dependency>
@@ -194,23 +197,17 @@
                 <version>${version.pnc}</version>
             </dependency>
 
-            <!-- JavaEE / EAP BOMs -->
             <dependency>
-                <groupId>org.jboss.bom</groupId>
-                <artifactId>jboss-eap-jakartaee8-with-tools</artifactId>
-                <version>${jboss.bom.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>2.1.1</version>
             </dependency>
             <dependency>
-                <groupId>org.jboss.bom</groupId>
-                <artifactId>eap-runtime-artifacts</artifactId>
-                <version>${jboss.bom.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>jakarta.transaction</groupId>
+                <artifactId>jakarta.transaction-api</artifactId>
+                <version>2.0.1</version>
             </dependency>
 
-            <!-- JavaEE / EAP BOMs -->
             <dependency>
                 <groupId>commons-validator</groupId>
                 <artifactId>commons-validator</artifactId>
@@ -221,12 +218,7 @@
                 <artifactId>keycloak-core</artifactId>
                 <version>18.0.9.redhat-00001</version>
             </dependency>
-            <dependency>
-                <groupId>org.wildfly.security</groupId>
-                <artifactId>wildfly-elytron-http-oidc</artifactId>
-                <version>1.15.9.Final</version>
-                <scope>provided</scope>
-            </dependency>
+            <!-- OIDC security: use Quarkus OIDC when needed -->
             <!-- needed when using J11 -->
             <!-- JAXB API -->
             <dependency>
@@ -441,11 +433,12 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>org.wildfly.plugins</groupId>
-                    <artifactId>wildfly-maven-plugin</artifactId>
-                    <version>1.1.0.Alpha8</version>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
                     <configuration>
-                        <skip>true</skip>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
                     </configuration>
                 </plugin>
             </plugins>

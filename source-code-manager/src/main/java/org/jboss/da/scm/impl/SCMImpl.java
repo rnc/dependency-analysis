@@ -4,7 +4,7 @@ import org.apache.maven.scm.ScmException;
 import org.jboss.da.scm.api.SCM;
 import org.jboss.da.scm.api.SCMType;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import java.io.File;
 import java.io.IOException;

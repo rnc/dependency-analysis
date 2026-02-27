@@ -7,19 +7,17 @@
     </parent>
     <artifactId>reports-backend</artifactId>
     <name>reports-backend</name>
-    <packaging>ejb</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <!-- Project modules -->
         <dependency>
             <groupId>org.jboss.da</groupId>
             <artifactId>communication</artifactId>
-            <type>ejb</type>
         </dependency>
         <dependency>
             <groupId>org.jboss.da</groupId>
             <artifactId>reports-model</artifactId>
-            <type>ejb</type>
         </dependency>
 
         <dependency>
@@ -42,26 +40,27 @@
             <artifactId>jakarta.validation-api</artifactId>
             <scope>provided</scope>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.spec.javax.enterprise.concurrent</groupId>-->
+<!--            <artifactId>jboss-concurrency-api_1.0_spec</artifactId>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.spec.javax.ws.rs</groupId>-->
+<!--            <artifactId>jboss-jaxrs-api_2.1_spec</artifactId>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>org.jboss.spec.javax.enterprise.concurrent</groupId>
-            <artifactId>jboss-concurrency-api_1.0_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.ws.rs</groupId>
-            <artifactId>jboss-jaxrs-api_2.1_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.ejb</groupId>
-            <artifactId>jboss-ejb-api_3.2_spec</artifactId>
+            <groupId>jakarta.transaction</groupId>
+            <artifactId>jakarta.transaction-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
         <!-- Test dependencies -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-junit5</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <dependency>

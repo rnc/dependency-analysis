@@ -2,8 +2,8 @@ package org.jboss.da.validation;
 
 import java.util.Set;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 

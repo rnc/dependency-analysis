@@ -6,11 +6,11 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.annotation.PostConstruct;
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
-import javax.ws.rs.core.Context;
-import javax.servlet.ServletConfig;
+import jakarta.annotation.PostConstruct;
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
+import jakarta.ws.rs.core.Context;
+import jakarta.servlet.ServletConfig;
 
 import io.swagger.v3.jaxrs2.integration.JaxrsOpenApiContextBuilder;
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
@@ -39,10 +39,13 @@ public class ReportsRestActivator extends Application {
 
     private void configureSwagger() {
         try {
-            new JaxrsOpenApiContextBuilder().servletConfig(servletConfig)
+            var builder = new JaxrsOpenApiContextBuilder()
                     .application(this)
-                    .resourcePackages(Collections.singleton("org.jboss.da.rest"))
-                    .buildContext(true);
+                    .resourcePackages(Collections.singleton("org.jboss.da.rest"));
+            if (servletConfig != null) {
+                builder.servletConfig(servletConfig);
+            }
+            builder.buildContext(true);
         } catch (OpenApiConfigurationException ex) {
             throw new IllegalArgumentException("Failed to setup OpenAPI configuration", ex);
         }

@@ -13,8 +13,8 @@ import java.io.InputStream;
 import java.net.URLConnection;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
 /**
  * @author <a href="mailto:matejonnet@gmail.com">Matej Lazar</a>

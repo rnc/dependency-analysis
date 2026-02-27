@@ -3,7 +3,7 @@ package org.jboss.da.rest.websocket;
 import org.jboss.weld.context.activator.ActivateRequestContext;
 import org.slf4j.Logger;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import javax.websocket.RemoteEndpoint.Basic;
 import javax.websocket.Session;
 
