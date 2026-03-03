@@ -13,6 +13,7 @@ import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+
 //import io.quarkus.scheduler.Scheduled;
 /**
  *
@@ -62,7 +63,7 @@ public class SCMCache {
         }
     }
 
-    //@Scheduled(every="10m")
+    // @Scheduled(every="10m")
     public void invalidateCache() {
         checkFutureCache();
         Iterator<Map.Entry<SCMSpecifier, DirectoryReference>> it = cache.entrySet().iterator();

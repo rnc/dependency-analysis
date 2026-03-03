@@ -1,5 +1,6 @@
 package org.jboss.da.scm.impl;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import org.apache.maven.scm.ScmException;
 import org.jboss.da.scm.api.SCM;
 import org.jboss.da.scm.api.SCMType;
@@ -19,6 +20,7 @@ import org.apache.commons.io.FileUtils;
  *
  * @author Honza Brázdil &lt;jbrazdil@redhat.com&gt;
  */
+@ApplicationScoped
 public class SCMImpl implements SCM {
 
     @Inject
