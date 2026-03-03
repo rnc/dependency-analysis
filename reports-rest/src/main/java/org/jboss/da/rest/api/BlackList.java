@@ -1,12 +1,12 @@
 package org.jboss.da.rest.api;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.media.ArraySchema;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.media.Content;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
+import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.jboss.da.listings.model.rest.ContainsResponse;
 import org.jboss.da.listings.model.rest.RestArtifact;
 import org.jboss.da.listings.model.rest.SuccessResponse;
@@ -39,20 +39,20 @@ public interface BlackList {
     @Consumes(value = MediaType.APPLICATION_JSON)
     @Produces(value = MediaType.APPLICATION_JSON)
     @Operation(summary = "Add an artifact to the blocklist")
-    @ApiResponse(content = @Content(schema = @Schema(implementation = SuccessResponse.class)))
+    @APIResponse(content = @Content(schema = @Schema(implementation = SuccessResponse.class)))
     Response addBlackArtifact(@Parameter(description = GAV_JSON) RestArtifact artifact);
 
     @GET
     @Produces(value = MediaType.APPLICATION_JSON)
     @Operation(summary = "Get all artifacts in the blocklist")
-    @ApiResponse(content = @Content(array = @ArraySchema(schema = @Schema(implementation = RestArtifact.class))))
+    @APIResponse(content = @Content(schema = @Schema(type = SchemaType.ARRAY, implementation = RestArtifact.class)))
     Collection<RestArtifact> getAllBlackArtifacts();
 
     @GET
     @Path(value = "/ga")
     @Produces(value = MediaType.APPLICATION_JSON)
     @Operation(summary = "Get artifacts in the blocklist with given groupid and artifactid")
-    @ApiResponse(content = @Content(array = @ArraySchema(schema = @Schema(implementation = RestArtifact.class))))
+    @APIResponse(content = @Content(schema = @Schema(type = SchemaType.ARRAY, implementation = RestArtifact.class)))
     Collection<RestArtifact> getBlackArtifacts(
             @QueryParam(value = "groupid") String groupId,
             @QueryParam(value = "artifactid") String artifactId);
@@ -61,12 +61,12 @@ public interface BlackList {
     @Path(value = "/gav")
     @Produces(value = MediaType.APPLICATION_JSON)
     @Operation(summary = "Check if an artifact is in the blocklist")
-    @ApiResponse(content = @Content(schema = @Schema(implementation = ContainsResponse.class)))
-    @ApiResponse(
+    @APIResponse(content = @Content(schema = @Schema(implementation = ContainsResponse.class)))
+    @APIResponse(
             responseCode = "404",
             description = "Artifact is not in the blocklist",
             content = @Content(schema = @Schema(implementation = ContainsResponse.class)))
-    @ApiResponse(
+    @APIResponse(
             responseCode = "400",
             description = "All parameters are required",
             content = @Content(schema = @Schema(implementation = ErrorMessage.class)))
@@ -80,7 +80,7 @@ public interface BlackList {
     @Consumes(value = MediaType.APPLICATION_JSON)
     @Produces(value = MediaType.APPLICATION_JSON)
     @Operation(summary = "Remove an artifact from the blocklist")
-    @ApiResponse(content = @Content(schema = @Schema(implementation = SuccessResponse.class)))
+    @APIResponse(content = @Content(schema = @Schema(implementation = SuccessResponse.class)))
     SuccessResponse removeBlackArtifact(@Parameter(description = GAV_JSON) RestArtifact artifact);
 
 }

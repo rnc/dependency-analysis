@@ -10,6 +10,10 @@
     <packaging>jar</packaging>
     <description>Quarkus application for Dependency Analyzer</description>
 
+    <properties>
+        <quarkus.package.jar.type>uber-jar</quarkus.package.jar.type>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.jboss.da</groupId>
@@ -41,6 +45,16 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-oidc</artifactId>
         </dependency>
+        <!-- Jakarta XML Binding (for communication module POM / Maven metadata parsing) -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-jaxb</artifactId>
+        </dependency>
+        <!-- Jakarta WebSocket (for reports-rest WebSocket endpoint) -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-websockets</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -48,18 +62,22 @@
             <plugin>
                 <groupId>io.quarkus.platform</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
-                <version>${quarkus.platform.version}</version>
-                <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>build</goal>
-                        </goals>
-                        <configuration>
-                            <finalName>dependency-analysis</finalName>
-                        </configuration>
-                    </execution>
-                </executions>
+                <configuration>
+                    <finalName>dependency-analysis</finalName>
+                </configuration>
+
+                <!--                <version>${quarkus.platform.version}</version>-->
+<!--                <extensions>true</extensions>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <finalName>dependency-analysis</finalName>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
             </plugin>
         </plugins>
     </build>

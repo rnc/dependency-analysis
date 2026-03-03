@@ -1,10 +1,10 @@
 package org.jboss.da.rest.api;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.media.Content;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.jboss.pnc.api.dto.ComponentVersion;
 
 import jakarta.ws.rs.GET;
@@ -23,6 +23,6 @@ public interface VersionEndpoint {
     @GET
     @Produces(value = MediaType.APPLICATION_JSON)
     @Operation(summary = "Get version of Dependency-Analysis")
-    @ApiResponse(content = @Content(schema = @Schema(implementation = ComponentVersion.class)))
+    @APIResponse(content = @Content(schema = @Schema(implementation = ComponentVersion.class)))
     public ComponentVersion getVersion();
 }

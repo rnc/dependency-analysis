@@ -56,7 +56,7 @@ import org.slf4j.Logger;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import javax.validation.ValidationException;
+import jakarta.validation.ValidationException;
 
 import java.io.File;
 import java.util.ArrayList;
